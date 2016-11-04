@@ -35,6 +35,7 @@ class Excel:
     def test_excel():
         a = Excel()
         print a.row_data()
+        print len(a.row_data())
         print a.row_data()[0]['Method']
         print a.row_data()[1]['Data']
 
