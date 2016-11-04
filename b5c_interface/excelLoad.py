@@ -31,9 +31,13 @@ class Excel:
             data_list.append(app)
         return data_list
 
+    @staticmethod
+    def test_excel():
+        a = Excel()
+        print a.row_data()
+        print a.row_data()[0]['Method']
+        print a.row_data()[1]['Data']
+
 if __name__ == '__main__':
-    a = Excel()
-    print a .row_data()
-    print a.row_data()[0]['Method']
-    print a.row_data()[1]['Data']
+    Excel.test_excel()
 

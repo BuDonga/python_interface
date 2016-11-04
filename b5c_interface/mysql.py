@@ -27,6 +27,7 @@ class MySQL:
 
     def close(self):
         self.db.close()
+        print 'DB连接已关闭'
         print '-' * 50
 
     def insert(self, sql):
@@ -62,47 +63,52 @@ class MySQL:
             print '删除失败！！'
             print e
 
+    @staticmethod
+    def test_sql():
+        """测试代码"""
+        """select"""
+        a = MySQL()
+        sql = "SELECT * FROM test WHERE sex = 'm'"
+        try:
+            result = a.select(sql)
+            c = []
+            b = {}
+            index = 0
+            for re in result:
+                No = re[0]
+                name = re[1]
+                sex = re[2]
+                age = re[3]
+                c.append(name)
+                b[index] = re
+                index += 1
+                print No, name, sex, age
+        except Exception, e:
+            print e
+            raise IOError
+        finally:
+            a.close()
+        print c
+        print b
+
+        """insert"""
+        b = MySQL()
+        sql2 = "INSERT INTO `test` (`no`, `name`, `sex`, `age`) VALUES ('4', 'godda', 'male', '38')"
+        b.insert(sql2)
+        b.close()
+
+        """update"""
+        c = MySQL()
+        sql3 = "UPDATE `test` SET `sex`='m' WHERE (`sex`='male')"
+        c.update(sql3)
+        c.close()
+
+        """delete"""
+        d = MySQL()
+        sql4 = "DELETE FROM `test` WHERE no = '4'"
+        d.delete(sql4)
+        d.close()
+
 
 if __name__ == '__main__':
-    """select"""
-    a = MySQL()
-    sql = "SELECT * FROM test WHERE sex = 'm'"
-    try:
-        result = a.select(sql)
-        c = []
-        b = {}
-        index = 0
-        for re in result:
-            No = re[0]
-            name = re[1]
-            sex = re[2]
-            age = re[3]
-            c.append(name)
-            b[index] = re
-            index += 1
-            print No, name, sex, age
-    except Exception, e:
-        print e
-        raise IOError
-    finally:
-        a.close()
-    print c
-    print b
-
-    """insert"""
-    b = MySQL()
-    sql2 = "INSERT INTO `test` (`no`, `name`, `sex`, `age`) VALUES ('4', 'godda', 'male', '38')"
-    b.insert(sql2)
-    b.close()
-
-    """update"""
-    c = MySQL()
-    sql3 = "UPDATE `test` SET `sex`='m' WHERE (`sex`='male')"
-    c.update(sql3)
-    c.close()
-
-    """delete"""
-    d = MySQL()
-    sql4 = "DELETE FROM `test` WHERE no = '4'"
-    d.delete(sql4)
-    d.close()
+    MySQL.test_sql()
