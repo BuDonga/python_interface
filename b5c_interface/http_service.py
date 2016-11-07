@@ -3,6 +3,8 @@ import urllib2
 import json
 from b5c_interface.excelLoad import *
 
+__author__ = '不懂'
+
 
 class HttpService:
     def __init__(self):

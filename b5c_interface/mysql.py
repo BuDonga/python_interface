@@ -3,6 +3,8 @@ from __future__ import with_statement
 import MySQLdb
 import ConfigParser
 
+__author__ = '不懂'
+
 
 class MySQL:
     def __init__(self):
@@ -15,6 +17,7 @@ class MySQL:
         self.db = cf.get('DATABASE1', 'db')
         try:
             self.db = MySQLdb.connect(self.host, self.user, self.password, self.db)
+            self.db.set_character_set('utf8')
         except Exception, e:
             print e
             raise IOError('connection failed')

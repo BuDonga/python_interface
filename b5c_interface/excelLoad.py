@@ -2,6 +2,10 @@
 import xlrd
 import xlwt
 from xlutils.copy import copy
+from b5c_interface.mysql import *
+from b5c_interface.data_structure import *
+
+__author__ = '不懂'
 
 
 class Excel:
@@ -32,18 +36,6 @@ class Excel:
                     n += 1
             data_list.append(app)
         return data_list
-
-    def write_data(self, value='pass', by_index=0):
-        style = xlwt.XFStyle()
-        font = xlwt.Font()
-        font.bold = True
-        font.colour_index = 3  # 绿色
-        style.font = font
-        oldWb = xlrd.open_workbook(self.path, formatting_info=True)
-        newWb = copy(oldWb)
-        newWs = newWb.get_sheet(by_index)
-        newWs.write(1, 10, value, style)
-        newWb.save(self.path)
 
     def write_return_code(self, row, value, column=7, by_index=0):
         """写入return code"""
@@ -134,7 +126,42 @@ class Excel:
         a.write_return_status(2, 'FAIL')
         a.write_return_data(1, 'data!!!!!')
 
+    def to_db(self):
+        c = MySQL()
+        c.delete("TRUNCATE TABLE `test_data`")
+        d = DataStruct()
+        b = Excel(self.path)
+        dd = b.row_data()
+        for info in dd:
+            d.case_id = info['Case ID']
+            d.description = info['Description']
+            d.request_url = info['Request Url']
+            d.http_method = info['Method']
+            d.run_type = info['Run Type']
+            d.data = info['Data']
+            d.header = info['Header']
+            c.insert(
+                "INSERT INTO `test_data` (`Case_ID`, `Description`, `Request_URL`, `Method`, `Run_Type`, `Data`, `Header`) VALUES ('%s', '%s', '%s', '%s', '%s', '%s', '%s')" % (
+                d.case_id, d.description, d.request_url, d.http_method, d.run_type, d.data, d.header))
+        c.close()
 
+    def test_db(self):
+        c = MySQL()
+        #c.delete("TRUNCATE TABLE `test_data`")
+        d = DataStruct()
+        b = Excel(path='excel\\test.xls')
+        dd = b.row_data()
+        for info in dd:
+            d.case_id = info['Case ID']
+            d.description = info['Description']
+            d.request_url = info['Request Url']
+            d.http_method = info['Method']
+            d.run_type = info['Run Type']
+            d.data = info['Data']
+            d.header = info['Header']
+            c.insert("INSERT INTO `test_data` (`Case_ID`, `Description`, `Request_URL`, `Method`, `Run_Type`, `Data`, `Header`) VALUES ('%s', '%s', '%s', '%s', '%s', '%s', '%s')"  %(d.case_id, d.description, d.request_url, d.http_method, d.run_type, d.data, d.header))
+        c.close()
 if __name__ == '__main__':
-    Excel.test_excel()
+    #Excel.test_excel()
+    Excel().test_db()
 
