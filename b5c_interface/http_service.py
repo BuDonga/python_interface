@@ -22,7 +22,10 @@ class HttpService:
         return self.data
 
     def set_data(self, data):
-        self.data = json.dumps(eval(data))  # 转换成json data post
+        if data.lower() == 'none':
+            self.data = data
+        else:
+            self.data = json.dumps(eval(data))  # 转换成json data post
 
     def get_url(self):
         return self.url
@@ -78,7 +81,9 @@ class HttpService:
         header = test_data[1]['Header']
         a.set_all(url2, data, header)
         b = a.request_post()
-        print b
+        print json.dumps(b)  # 去除'u'
+        print type(b)
+        print type(b)
         print b['msg']
         print b['code']
         print b['data']

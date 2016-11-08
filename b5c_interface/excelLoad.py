@@ -128,7 +128,7 @@ class Excel:
 
     def to_db(self):
         c = MySQL()
-        c.delete("TRUNCATE TABLE `test_data`")
+        #c.delete("TRUNCATE TABLE `test_data`")
         d = DataStruct()
         b = Excel(self.path)
         dd = b.row_data()
