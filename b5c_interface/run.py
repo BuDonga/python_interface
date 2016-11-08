@@ -5,6 +5,8 @@ from b5c_interface.excelLoad import *
 from b5c_interface.http_service import *
 from b5c_interface.mysql import *
 
+__author__ = '不懂'
+
 
 class Run(unittest.TestCase):
     def setUp(self):

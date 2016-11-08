@@ -1,0 +1,16 @@
+CREATE TABLE `test_data` (
+  `No` int(3) NOT NULL AUTO_INCREMENT,
+  `Case_ID` int(3) unsigned zerofill NOT NULL,
+  `Description` text CHARACTER SET utf8,
+  `Request_URL` varchar(255) CHARACTER SET utf8 NOT NULL,
+  `Method` varchar(10) CHARACTER SET utf8 NOT NULL,
+  `Run_Type` varchar(5) CHARACTER SET utf8 NOT NULL,
+  `Data` text CHARACTER SET utf8,
+  `Header` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
+  `Return_Code` int(10) DEFAULT NULL,
+  `Return_Msg` text CHARACTER SET utf8,
+  `Return_Data` text CHARACTER SET utf8,
+  `Status` varchar(10) CHARACTER SET utf8 DEFAULT NULL,
+  PRIMARY KEY (`No`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+
