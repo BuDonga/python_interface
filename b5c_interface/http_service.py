@@ -35,13 +35,17 @@ class HttpService:
 
     def request_get(self):
         """get请求"""
-        try:
-            response = urllib2.urlopen(self.url)
-            content = json.loads(response.read())
-            return content
-        except Exception, e:
-            print str(e)
-            return {}
+        response = urllib2.urlopen(self.url)
+        content = json.loads(response.read())
+        return content
+        # try:
+        #     response = urllib2.urlopen(self.url)
+        #     content = json.loads(response.read())
+        #     return content
+        # except Exception, e:
+        #     print str(e)
+        #     return {}
+        # raise Exception
 
     def set_all(self, url, data, header):
         self.set_url(url)
