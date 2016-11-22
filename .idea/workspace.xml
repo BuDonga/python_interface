@@ -3,12 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="fefe0ee0-5e80-422a-9db8-270853c8b56f" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/b5c_interface/excel/interface_caselist.xls" afterPath="$PROJECT_DIR$/b5c_interface/excel/interface_caselist.xls" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Readme.txt" afterPath="$PROJECT_DIR$/Readme.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/b5c_interface/data_structure.py" afterPath="$PROJECT_DIR$/b5c_interface/data_structure.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/b5c_interface/http_service.py" afterPath="$PROJECT_DIR$/b5c_interface/http_service.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/b5c_interface/run.py" afterPath="$PROJECT_DIR$/b5c_interface/run.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/run_mode.ini" afterPath="$PROJECT_DIR$/run_mode.ini" />
     </list>
     <ignored path="python_interface.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -27,16 +23,23 @@
     <SUITE FILE_PATH="coverage/python_interface$Unittests_in_Run__4_.coverage" NAME="Unittests in Run (4) Coverage Results" MODIFIED="1478684568185" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/b5c_interface" />
     <SUITE FILE_PATH="coverage/python_interface$Unittests_in_run.coverage" NAME="Unittests in run Coverage Results" MODIFIED="1478684814079" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/b5c_interface" />
     <SUITE FILE_PATH="coverage/python_interface$data_structure.coverage" NAME="data_structure Coverage Results" MODIFIED="1478682195995" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/b5c_interface" />
-    <SUITE FILE_PATH="coverage/python_interface$Unittest_Run_test_run_case.coverage" NAME="Unittest Run.test_run_case Coverage Results" MODIFIED="1478685409812" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/b5c_interface" />
+    <SUITE FILE_PATH="coverage/python_interface$Unittest_Run_test_run_case.coverage" NAME="Unittest Run.test_run_case Coverage Results" MODIFIED="1478771977884" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/b5c_interface" />
     <SUITE FILE_PATH="coverage/python_interface$http_service.coverage" NAME="http_service Coverage Results" MODIFIED="1478593510353" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/b5c_interface" />
-    <SUITE FILE_PATH="coverage/python_interface$Unittests_in_Run__3_.coverage" NAME="Unittests in Run (3) Coverage Results" MODIFIED="1478684572821" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/b5c_interface" />
+    <SUITE FILE_PATH="coverage/python_interface$Unittests_in_Run__3_.coverage" NAME="Unittests in Run (3) Coverage Results" MODIFIED="1478766681651" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/b5c_interface" />
     <SUITE FILE_PATH="coverage/python_interface$excelLoad.coverage" NAME="excelLoad Coverage Results" MODIFIED="1478521160894" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/b5c_interface" />
-    <SUITE FILE_PATH="coverage/python_interface$Unittests_in_Run__1_.coverage" NAME="Unittests in Run (1) Coverage Results" MODIFIED="1478685803138" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/b5c_interface" />
+    <SUITE FILE_PATH="coverage/python_interface$Unittests_in_Run__1_.coverage" NAME="Unittests in Run (1) Coverage Results" MODIFIED="1478766321125" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/b5c_interface" />
     <SUITE FILE_PATH="coverage/python_interface$Unittests_in_Run__2_.coverage" NAME="Unittests in Run (2) Coverage Results" MODIFIED="1478684945396" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/b5c_interface" />
     <SUITE FILE_PATH="coverage/python_interface$Unittests_in_Run.coverage" NAME="Unittests in Run Coverage Results" MODIFIED="1478685241501" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/b5c_interface" />
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="DatabaseView">
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_TABLE_DETAILS" value="true" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
@@ -47,7 +50,7 @@
       <file leaf-file-name="excelLoad.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/b5c_interface/excelLoad.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2507">
+            <state relative-caret-position="92">
               <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
               <folding>
                 <element signature="e#23#34#0" expanded="true" />
@@ -59,11 +62,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="run.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="run.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/b5c_interface/run.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="552">
-              <caret line="33" column="47" selection-start-line="33" selection-start-column="47" selection-end-line="33" selection-end-column="47" />
+            <state relative-caret-position="736">
+              <caret line="36" column="31" selection-start-line="36" selection-start-column="31" selection-end-line="36" selection-end-column="31" />
               <folding>
                 <element signature="e#24#39#0" expanded="true" />
                 <marker date="1478685803026" expanded="true" signature="2703:2936" ph="INSERT INTO `test_data`... " />
@@ -93,11 +96,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="http_service.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="http_service.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/b5c_interface/http_service.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="404">
-              <caret line="54" column="8" selection-start-line="54" selection-start-column="8" selection-end-line="54" selection-end-column="8" />
+            <state relative-caret-position="368">
+              <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
               <folding>
                 <element signature="e#23#37#0" expanded="true" />
               </folding>
@@ -108,7 +111,7 @@
       <file leaf-file-name="mysql.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/b5c_interface/mysql.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="276">
+            <state relative-caret-position="230">
               <caret line="12" column="47" selection-start-line="10" selection-start-column="8" selection-end-line="12" selection-end-column="47" />
               <folding>
                 <element signature="e#24#61#0" expanded="true" />
@@ -124,8 +127,8 @@
       <file leaf-file-name="Readme.txt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Readme.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="368">
-              <caret line="16" column="11" selection-start-line="16" selection-start-column="11" selection-end-line="16" selection-end-column="11" />
+            <state relative-caret-position="437">
+              <caret line="19" column="24" selection-start-line="19" selection-start-column="24" selection-end-line="19" selection-end-column="24" />
               <folding />
             </state>
           </provider>
@@ -134,7 +137,7 @@
       <file leaf-file-name="data_structure.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/b5c_interface/data_structure.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="546">
+            <state relative-caret-position="552">
               <caret line="24" column="81" selection-start-line="24" selection-start-column="81" selection-end-line="24" selection-end-column="81" />
               <folding />
             </state>
@@ -186,8 +189,8 @@
         <option value="$PROJECT_DIR$/b5c_interface/http_service.py" />
         <option value="$PROJECT_DIR$/run_mode.ini" />
         <option value="$PROJECT_DIR$/b5c_interface/data_structure.py" />
-        <option value="$PROJECT_DIR$/Readme.txt" />
         <option value="$PROJECT_DIR$/b5c_interface/run.py" />
+        <option value="$PROJECT_DIR$/Readme.txt" />
       </list>
     </option>
   </component>
@@ -268,14 +271,14 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="D:/auto_python" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\python_interface\b5c_interface" />
     </key>
   </component>
-  <component name="RunManager" selected="Python tests.Unittests in Run (1)">
+  <component name="RunManager" selected="Python tests.Unittest Run.test_run_case">
     <configuration default="false" name="Unittests in Run (1)" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -292,29 +295,6 @@
       <option name="METHOD_NAME" value="" />
       <option name="FOLDER_NAME" value="" />
       <option name="TEST_TYPE" value="TEST_CLASS" />
-      <option name="PATTERN" value="" />
-      <option name="USE_PATTERN" value="false" />
-      <option name="PUREUNITTEST" value="true" />
-      <option name="PARAMS" value="" />
-      <option name="USE_PARAM" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="Unittests in run" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/b5c_interface" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="python_interface" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/b5c_interface/run.py" />
-      <option name="CLASS_NAME" value="" />
-      <option name="METHOD_NAME" value="" />
-      <option name="FOLDER_NAME" value="" />
-      <option name="TEST_TYPE" value="TEST_SCRIPT" />
       <option name="PATTERN" value="" />
       <option name="USE_PATTERN" value="false" />
       <option name="PUREUNITTEST" value="true" />
@@ -384,6 +364,29 @@
       <option name="METHOD_NAME" value="test_run_case" />
       <option name="FOLDER_NAME" value="" />
       <option name="TEST_TYPE" value="TEST_METHOD" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="PUREUNITTEST" value="true" />
+      <option name="PARAMS" value="" />
+      <option name="USE_PARAM" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="Unittests in Run (3)" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/b5c_interface" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="python_interface" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/b5c_interface/run.py" />
+      <option name="CLASS_NAME" value="Run" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_CLASS" />
       <option name="PATTERN" value="" />
       <option name="USE_PATTERN" value="false" />
       <option name="PUREUNITTEST" value="true" />
@@ -601,18 +604,18 @@
     </configuration>
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Python tests.Unittests in Run (1)" />
-      <item index="1" class="java.lang.String" itemvalue="Python tests.Unittests in run" />
-      <item index="2" class="java.lang.String" itemvalue="Python tests.Unittests in Run (2)" />
-      <item index="3" class="java.lang.String" itemvalue="Python tests.Unittests in Run" />
-      <item index="4" class="java.lang.String" itemvalue="Python tests.Unittest Run.test_run_case" />
+      <item index="1" class="java.lang.String" itemvalue="Python tests.Unittests in Run (2)" />
+      <item index="2" class="java.lang.String" itemvalue="Python tests.Unittests in Run" />
+      <item index="3" class="java.lang.String" itemvalue="Python tests.Unittest Run.test_run_case" />
+      <item index="4" class="java.lang.String" itemvalue="Python tests.Unittests in Run (3)" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python tests.Unittests in Run (1)" />
-        <item index="1" class="java.lang.String" itemvalue="Python tests.Unittest Run.test_run_case" />
-        <item index="2" class="java.lang.String" itemvalue="Python tests.Unittests in Run" />
-        <item index="3" class="java.lang.String" itemvalue="Python tests.Unittests in Run (2)" />
-        <item index="4" class="java.lang.String" itemvalue="Python tests.Unittests in run" />
+        <item index="0" class="java.lang.String" itemvalue="Python tests.Unittest Run.test_run_case" />
+        <item index="1" class="java.lang.String" itemvalue="Python tests.Unittests in Run (3)" />
+        <item index="2" class="java.lang.String" itemvalue="Python tests.Unittests in Run (1)" />
+        <item index="3" class="java.lang.String" itemvalue="Python tests.Unittests in Run" />
+        <item index="4" class="java.lang.String" itemvalue="Python tests.Unittests in Run (2)" />
       </list>
     </recent_temporary>
   </component>
@@ -633,19 +636,16 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Unittest_Run_test_run_case - 2016.11.09 at 17h 56m 50s.xml">
+    <history-entry file="Unittest_Run_test_run_case - 2016.11.10 at 17h 59m 38s.xml">
       <configuration name="Unittest Run.test_run_case" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_in_Run - 2016.11.09 at 17h 40m 37s.xml">
-      <configuration name="Unittests in Run" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_in_Run - 2016.11.09 at 17h 54m 02s.xml">
-      <configuration name="Unittests in Run" configurationId="tests" />
     </history-entry>
     <history-entry file="Unittests_in_Run_(1) - 2016.11.09 at 17h 45m 16s.xml">
       <configuration name="Unittests in Run (1)" configurationId="tests" />
     </history-entry>
     <history-entry file="Unittests_in_Run_(1) - 2016.11.09 at 18h 03m 24s.xml">
+      <configuration name="Unittests in Run (1)" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_Run_(1) - 2016.11.10 at 16h 25m 23s.xml">
       <configuration name="Unittests in Run (1)" configurationId="tests" />
     </history-entry>
     <history-entry file="Unittests_in_Run_(2) - 2016.11.09 at 17h 38m 14s.xml">
@@ -657,6 +657,9 @@
     <history-entry file="Unittests_in_Run_(3) - 2016.11.09 at 17h 42m 53s.xml">
       <configuration name="Unittests in Run (3)" configurationId="tests" />
     </history-entry>
+    <history-entry file="Unittests_in_Run_(3) - 2016.11.10 at 16h 31m 22s.xml">
+      <configuration name="Unittests in Run (3)" configurationId="tests" />
+    </history-entry>
     <history-entry file="Unittests_in_Run_(4) - 2016.11.09 at 17h 42m 49s.xml">
       <configuration name="Unittests in Run (4)" configurationId="tests" />
     </history-entry>
@@ -665,7 +668,7 @@
     </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.103125" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -674,18 +677,18 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.344245" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39915523" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.344245" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39915523" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -1102,7 +1105,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/b5c_interface/excelLoad.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2507">
+        <state relative-caret-position="92">
           <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
           <folding>
             <element signature="e#23#34#0" expanded="true" />
@@ -1115,7 +1118,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/b5c_interface/mysql.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
+        <state relative-caret-position="230">
           <caret line="12" column="47" selection-start-line="10" selection-start-column="8" selection-end-line="12" selection-end-column="47" />
           <folding>
             <element signature="e#24#61#0" expanded="true" />
@@ -1143,19 +1146,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/b5c_interface/http_service.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="404">
-          <caret line="54" column="8" selection-start-line="54" selection-start-column="8" selection-end-line="54" selection-end-column="8" />
-          <folding>
-            <element signature="e#23#37#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/b5c_interface/data_structure.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="546">
+        <state relative-caret-position="552">
           <caret line="24" column="81" selection-start-line="24" selection-start-column="81" selection-end-line="24" selection-end-column="81" />
           <folding />
         </state>
@@ -1163,20 +1156,30 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Readme.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="16" column="11" selection-start-line="16" selection-start-column="11" selection-end-line="16" selection-end-column="11" />
+        <state relative-caret-position="437">
+          <caret line="19" column="24" selection-start-line="19" selection-start-column="24" selection-end-line="19" selection-end-column="24" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/b5c_interface/run.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="552">
-          <caret line="33" column="47" selection-start-line="33" selection-start-column="47" selection-end-line="33" selection-end-column="47" />
+        <state relative-caret-position="736">
+          <caret line="36" column="31" selection-start-line="36" selection-start-column="31" selection-end-line="36" selection-end-column="31" />
           <folding>
             <element signature="e#24#39#0" expanded="true" />
             <marker date="1478685803026" expanded="true" signature="2703:2936" ph="INSERT INTO `test_data`... " />
             <marker date="1478685803026" expanded="true" signature="3654:3887" ph="INSERT INTO `test_data`... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/b5c_interface/http_service.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="368">
+          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding>
+            <element signature="e#23#37#0" expanded="true" />
           </folding>
         </state>
       </provider>
