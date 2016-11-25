@@ -55,19 +55,19 @@ class Excel:
 
     def write_return_code(self, row, value):
         """写入return code"""
-        self.write_data(row, value, column=8, by_index=0)
+        self.write_data(row, value, column=13, by_index=0)
 
     def write_assert_1_resault(self, row, value):
         """写入验证结果1"""
-        self.write_data(row, value, column=10, by_index=0)
+        self.write_data(row, value, column=8, by_index=0)
 
     def write_assert_2_resault(self, row, value):
         """写入验证结果2"""
-        self.write_data(row, value, column=12, by_index=0)
+        self.write_data(row, value, column=10, by_index=0)
 
     def write_assert_3_resault(self, row, value):
         """写入验证结果3"""
-        self.write_data(row, value, column=13, by_index=0)
+        self.write_data(row, value, column=12, by_index=0)
 
     def write_return_message(self, row, value):
         """写入return message"""

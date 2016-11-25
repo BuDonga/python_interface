@@ -12,7 +12,7 @@ CREATE TABLE `test_data` (
   `Header` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
   `Return_Code` int(10) DEFAULT NULL,
   `Return_Msg` text CHARACTER SET utf8,
-  `Return_Data` text CHARACTER SET utf8,
+  `Return_Data` mediumtext CHARACTER SET utf8,
   `Status` varchar(10) CHARACTER SET utf8 DEFAULT NULL,
   PRIMARY KEY (`No`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;

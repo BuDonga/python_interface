@@ -71,11 +71,12 @@ class Run(unittest.TestCase):
                 self.ds.case_id, self.ds.description, self.ds.request_url, self.ds.http_method,
                 self.ds.run_type, self.ds.data, self.ds.header, self.ds.return_code, self.ds.return_msg,
                 self.ds.return_data, 'pass'))
+        print 'ok'
 
     def deal_exception(self, msg):
         self.ds.error_msg = str(msg)
         if not self.ds.return_code:
-            self.ds.return_code =0
+            self.ds.return_code = 0
         self.exc.write_return_data(self.ds.case_id, self.ds.return_data)
         self.exc.write_return_message(self.ds.case_id, self.ds.error_msg)
         self.exc.write_return_code(self.ds.case_id, self.ds.return_code)
