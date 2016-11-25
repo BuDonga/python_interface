@@ -1,3 +1,6 @@
+----------------------- 2016.11.8 不懂 -----------------------
+#增加表结构
+
 CREATE TABLE `test_data` (
   `No` int(3) NOT NULL AUTO_INCREMENT,
   `Case_ID` int(3) unsigned zerofill NOT NULL,
@@ -14,4 +17,17 @@ CREATE TABLE `test_data` (
   PRIMARY KEY (`No`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
-123点点点
+
+
+
+----------------------- 2016.11.25 不懂 -----------------------
+#增加效验字段及返回值
+
+ALTER TABLE `test_data`
+ADD COLUMN `Assert_1`  varchar(255) NULL AFTER `Header`,
+ADD COLUMN `Assert_1_Resault`  varchar(255) NULL AFTER `Assert_1`,
+ADD COLUMN `Assert_2`  varchar(255) NULL AFTER `Assert_1_Resault`,
+ADD COLUMN `Assert_2_Resault`  varchar(255) NULL AFTER `Assert_2`,
+ADD COLUMN `Assert_3`  varchar(255) NULL AFTER `Assert_2_Resault`,
+ADD COLUMN `Assert_3_Resault`  varchar(255) NULL AFTER `Assert_3`;
+

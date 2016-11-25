@@ -37,8 +37,7 @@ class Excel:
             data_list.append(app)
         return data_list
 
-    def write_return_code(self, row, value, column=7, by_index=0):
-        """写入return code"""
+    def write_data(self, row, value, column, by_index):
         """设置字体加粗"""
         try:
             style = xlwt.XFStyle()
@@ -54,43 +53,32 @@ class Excel:
         except Exception, e:
             print str(e)
 
-    def write_return_message(self, row, value, column=8, by_index=0):
+    def write_return_code(self, row, value):
+        """写入return code"""
+        self.write_data(row, value, column=8, by_index=0)
+
+    def write_assert_1_resault(self, row, value):
+        """写入验证结果1"""
+        self.write_data(row, value, column=10, by_index=0)
+
+    def write_assert_2_resault(self, row, value):
+        """写入验证结果2"""
+        self.write_data(row, value, column=12, by_index=0)
+
+    def write_assert_3_resault(self, row, value):
+        """写入验证结果3"""
+        self.write_data(row, value, column=13, by_index=0)
+
+    def write_return_message(self, row, value):
         """写入return message"""
-        """设置字体加粗"""
-        try:
-            style = xlwt.XFStyle()
-            font = xlwt.Font()
-            font.bold = True
-            style.font = font
-            oldWb = xlrd.open_workbook(self.path, formatting_info=True)
-            newWb = copy(oldWb)
-            newWs = newWb.get_sheet(by_index)
-            newWs.write(row, column, value, style)
-            newWb.save(self.path)
-            print 'write return_message successfully, current case_ID is %d' % row
-        except Exception, e:
-            print str(e)
+        self.write_data(row, value, column=14, by_index=0)
 
-    def write_return_data(self, row, value, column=9, by_index=0):
+    def write_return_data(self, row, value):
         """写入return data"""
-        """设置字体加粗"""
-        try:
-            style = xlwt.XFStyle()
-            font = xlwt.Font()
-            font.bold = True
-            style.font = font
-            oldWb = xlrd.open_workbook(self.path, formatting_info=True)
-            newWb = copy(oldWb)
-            newWs = newWb.get_sheet(by_index)
-            newWs.write(row, column, value, style)
-            newWb.save(self.path)
-            print 'write return_data successfully, current case_ID is %d' % row
-        except Exception, e:
-            print str(e)
+        self.write_data(row, value, column=15, by_index=0)
 
-    def write_return_status(self, row, value, column=10, by_index=0):
+    def write_return_status(self, row, value, column=16, by_index=0):
         """写入return status"""
-        """设置字体加粗"""
         try:
             style = xlwt.XFStyle()
             font = xlwt.Font()
@@ -125,6 +113,9 @@ class Excel:
         a.write_return_status(1, 'pasS')
         a.write_return_status(2, 'FAIL')
         a.write_return_data(1, 'data!!!!!')
+        a.write_assert_1_resault(1, 'pass')
+        a.write_assert_2_resault(2, 'fail')
+        a.write_assert_3_resault(2, 'heelo')
 
     def to_db(self):
         c = MySQL()
@@ -162,6 +153,6 @@ class Excel:
             c.insert("INSERT INTO `test_data` (`Case_ID`, `Description`, `Request_URL`, `Method`, `Run_Type`, `Data`, `Header`) VALUES ('%s', '%s', '%s', '%s', '%s', '%s', '%s')"  %(d.case_id, d.description, d.request_url, d.http_method, d.run_type, d.data, d.header))
         c.close()
 if __name__ == '__main__':
-    #Excel.test_excel()
-    Excel().test_db()
+    Excel.test_excel()
+    #Excel().test_db()
 
