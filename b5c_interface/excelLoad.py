@@ -39,6 +39,8 @@ class Excel:
 
     def write_data(self, row, value, column, by_index):
         """设置字体加粗"""
+        if len(str(value)) > 32767:
+            value = 'String longer than 32767 characters,please check it in report'
         try:
             style = xlwt.XFStyle()
             font = xlwt.Font()
@@ -49,9 +51,10 @@ class Excel:
             newWs = newWb.get_sheet(by_index)
             newWs.write(row, column, value, style)
             newWb.save(self.path)
-            print 'write return_code successfully, current case_ID is %d' % row
+            print 'write successfully, current case_ID is %d' % row
         except Exception, e:
             print str(e)
+
 
     def write_return_code(self, row, value):
         """写入return code"""

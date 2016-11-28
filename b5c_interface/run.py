@@ -45,6 +45,8 @@ class Run(unittest.TestCase):
                 """获取返回值"""
                 self.ds.return_code = req['code']
                 self.ds.return_data = json.dumps(req['data'])  # 去除'u'
+                self.ds.return_data = self.ds.return_data.replace('\'', '')  # 去除特殊符号'，如果数据带这个特殊符号会导致写入DB报错，what the fuck! 大坑！！！！
+                print self.ds.return_data
                 print '*' * 100
                 self.ds.return_msg = req['msg']
                 """写入excel，同时结果写入DB"""
@@ -59,6 +61,7 @@ class Run(unittest.TestCase):
                 """如果抛出异常则把用例的数据写入DB"""
                 self.deal_exception(e)
                 print 'parameter wrong with %s test case' % self.ds.case_id
+                print str(e)
                 print '*' * 100
 
     def deal_ok(self):

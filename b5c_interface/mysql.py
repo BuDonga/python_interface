@@ -96,7 +96,7 @@ class MySQL:
 
         """insert"""
         b = MySQL()
-        sql2 = "INSERT INTO `test` (`no`, `name`, `sex`, `age`) VALUES ('4', 'godda', 'male', '38')"
+        sql2 = "INSERT INTO `test` (`no`, `name`, `sex`, `age`) VALUES ('4', 'sdf', 'male', '38')"
         b.insert(sql2)
         b.close()
 
