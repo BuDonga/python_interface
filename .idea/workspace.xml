@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fefe0ee0-5e80-422a-9db8-270853c8b56f" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/b5c_interface/excel/test.xls" afterPath="$PROJECT_DIR$/b5c_interface/excel/test.xls" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Readme.txt" afterPath="$PROJECT_DIR$/Readme.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/b5c_interface/test.py" afterPath="$PROJECT_DIR$/b5c_interface/test.py" />
     </list>
     <ignored path="python_interface.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -63,11 +61,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="run.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="run.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/b5c_interface/run.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-873">
-              <caret line="23" column="24" selection-start-line="23" selection-start-column="24" selection-end-line="23" selection-end-column="24" />
+            <state relative-caret-position="554">
+              <caret line="54" column="63" selection-start-line="54" selection-start-column="63" selection-end-line="54" selection-end-column="63" />
               <folding>
                 <element signature="e#24#39#0" expanded="true" />
                 <marker date="1480324862341" expanded="true" signature="2904:3137" ph="INSERT INTO `test_data`... " />
@@ -87,7 +85,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="test.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="test.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/b5c_interface/test.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1265">
@@ -120,8 +118,8 @@
       <file leaf-file-name="Readme.txt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Readme.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="113">
-              <caret line="14" column="5" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
+            <state relative-caret-position="360">
+              <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -179,11 +177,11 @@
         <option value="$PROJECT_DIR$/run_mode.ini" />
         <option value="$PROJECT_DIR$/SQL.txt" />
         <option value="$PROJECT_DIR$/b5c_interface/mysql.py" />
-        <option value="$PROJECT_DIR$/b5c_interface/run.py" />
         <option value="$PROJECT_DIR$/b5c_interface/excelLoad.py" />
         <option value="$PROJECT_DIR$/b5c_interface/data_structure.py" />
-        <option value="$PROJECT_DIR$/Readme.txt" />
         <option value="$PROJECT_DIR$/b5c_interface/test.py" />
+        <option value="$PROJECT_DIR$/Readme.txt" />
+        <option value="$PROJECT_DIR$/b5c_interface/run.py" />
       </list>
     </option>
   </component>
@@ -1165,31 +1163,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Readme.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="113">
-          <caret line="14" column="5" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/.PyCharm2016.1/system/python_stubs/-1052162567/__builtin__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="426">
           <caret line="195" column="7" selection-start-line="195" selection-start-column="7" selection-end-line="195" selection-end-column="7" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/b5c_interface/run.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-873">
-          <caret line="23" column="24" selection-start-line="23" selection-start-column="24" selection-end-line="23" selection-end-column="24" />
-          <folding>
-            <element signature="e#24#39#0" expanded="true" />
-            <marker date="1480324862341" expanded="true" signature="2904:3137" ph="INSERT INTO `test_data`... " />
-            <marker date="1480324862341" expanded="true" signature="3875:4108" ph="INSERT INTO `test_data`... " />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1201,6 +1179,26 @@
             <element signature="e#24#39#0" expanded="true" />
             <marker date="1480337306783" expanded="true" signature="3205:3438" ph="INSERT INTO `test_data`... " />
             <marker date="1480337306783" expanded="true" signature="4188:4421" ph="INSERT INTO `test_data`... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Readme.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/b5c_interface/run.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="554">
+          <caret line="54" column="63" selection-start-line="54" selection-start-column="63" selection-end-line="54" selection-end-column="63" />
+          <folding>
+            <element signature="e#24#39#0" expanded="true" />
+            <marker date="1480324862341" expanded="true" signature="2904:3137" ph="INSERT INTO `test_data`... " />
+            <marker date="1480324862341" expanded="true" signature="3875:4108" ph="INSERT INTO `test_data`... " />
           </folding>
         </state>
       </provider>
