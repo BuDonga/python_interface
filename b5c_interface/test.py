@@ -22,53 +22,63 @@ class Run(unittest.TestCase):
         """循环case"""
         """获取excel中的值"""
         for case in self.row_data:
-            print self.row_data
-            print case
             self.ds = DataStruct()  # 初始化结构体
+
+            self.ds.case_id = int(case['Case ID'])
+            self.ds.description = case['Description']
+            self.ds.request_url = ''.join(str(self.ds.request_environment + case['Request Url']))
+            self.ds.http_method = case['Method']
+            self.ds.run_type = case['Run Type']
+            self.ds.data = case['Data']
+            self.ds.header = case['Header']
+            self.ds.assert_1 = case['Assert_1']
+            self.ds.assert_1_value = case['Assert_1_Value']
+            self.ds.assert_2 = case['Assert_2']
+            self.ds.assert_2_value = case['Assert_2_Value']
+            self.ds.assert_3 = case['Assert_3']
+            self.ds.assert_3_value = case['Assert_3_Value']
+
+            """设置参数"""
+            self.http.set_all(self.ds.request_url, self.ds.data, self.ds.header)
+
+            """调用接口"""
+            if self.ds.http_method.lower() == 'get':
+                req = self.http.request_get()
+            elif self.ds.http_method.lower() == 'post':
+                req = self.http.request_post()
+
+            """获取返回值"""
+            self.ds.return_code = req['code']
+            self.ds.return_data = json.dumps(req['data'])  # 去除'u'
+            self.ds.return_data = self.ds.return_data.replace('\'', '')  # 去除特殊符号'，如果数据带这个特殊符号会导致写入DB报错，what the fuck! 大坑！！！！
+
+            print req
+            a1 = eval(self.ds.assert_1)
+            a2 = eval(self.ds.assert_2)
+            a3 = eval(self.ds.assert_3)
+
+            print a1
+            print a2
+            print a3
+            if a1 == self.ds.assert_1_value:
+                print 1
+            if a2 == self.ds.assert_2_value:
+                print 2
+            if a3 == self.ds.assert_3_value:
+                print 3
+            else:
+                print 4
+            print '*' * 100
+            self.ds.return_msg = req['msg']
+            """写入excel，同时结果写入DB"""
             try:
-                self.ds.case_id = int(case['Case ID'])
-                self.ds.description = case['Description']
-                self.ds.request_url = ''.join(str(self.ds.request_environment + case['Request Url']))
-                self.ds.http_method = case['Method']
-                self.ds.run_type = case['Run Type']
-                self.ds.data = case['Data']
-                self.ds.header = case['Header']
-                self.ds.assert_1 = case['Assert_1']
-                print self.ds.assert_1
-                self.ds.assert_1_value = case['Assert_1_Value']
-                print self.ds.assert_1_value
-
-
-                """设置参数"""
-                self.http.set_all(self.ds.request_url, self.ds.data, self.ds.header)
-
-                """调用接口"""
-                if self.ds.http_method.lower() == 'get':
-                    req = self.http.request_get()
-                elif self.ds.http_method.lower() == 'post':
-                    req = self.http.request_post()
-
-                """获取返回值"""
-                self.ds.return_code = req['code']
-                self.ds.return_data = json.dumps(req['data'])  # 去除'u'
-                self.ds.return_data = self.ds.return_data.replace('\'', '')  # 去除特殊符号'，如果数据带这个特殊符号会导致写入DB报错，what the fuck! 大坑！！！！
-                print self.ds.return_data
-                print '*' * 100
-                self.ds.return_msg = req['msg']
-                """写入excel，同时结果写入DB"""
-                try:
-                    if not (self.assertEquals(self.ds.return_code, 2000) or self.assertEquals(self.ds.return_msg,
-                                                                                              'success')):
-                        self.deal_ok()
-                except Exception, e:
-                    print e
-                    raise Exception
+                if not (self.assertEquals(self.ds.return_code, 2000) or self.assertEquals(self.ds.return_msg,
+                                                                                          'success')):
+                    self.deal_ok()
             except Exception, e:
-                """如果抛出异常则把用例的数据写入DB"""
-                self.deal_exception(e)
-                print 'parameter wrong with %s test case' % self.ds.case_id
-                print str(e)
-                print '*' * 100
+                print e
+                raise Exception
+
 
     def deal_ok(self):
         self.exc.write_return_data(self.ds.case_id, self.ds.return_data)
