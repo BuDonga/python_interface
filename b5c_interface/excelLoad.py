@@ -9,7 +9,8 @@ __author__ = '不懂'
 
 
 class Excel:
-    def __init__(self, path='excel\\interface_caselist.xls'):
+    #def __init__(self, path='excel\\interface_caselist.xls'):
+    def __init__(self, path='excel\\test.xls'):
         self.path = path
 
     def open_excel(self):

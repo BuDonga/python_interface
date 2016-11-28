@@ -74,7 +74,7 @@ class Run(unittest.TestCase):
                 self.ds.case_id, self.ds.description, self.ds.request_url, self.ds.http_method,
                 self.ds.run_type, self.ds.data, self.ds.header, self.ds.return_code, self.ds.return_msg,
                 self.ds.return_data, 'pass'))
-        print 'ok' 
+        print 'ok'
 
     def deal_exception(self, msg):
         self.ds.error_msg = str(msg)
