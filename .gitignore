@@ -1,0 +1,6 @@
+runtime/*
+/web/index-test.php
+tests/*
+
+# phpstorm project files
+.idea
