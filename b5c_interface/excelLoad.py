@@ -35,6 +35,9 @@ class Excel:
                 if a:
                     app[colnames[n]] = a
                     n += 1
+                else:
+                    app[colnames[n]] = None
+                    n += 1
             data_list.append(app)
         return data_list
 
