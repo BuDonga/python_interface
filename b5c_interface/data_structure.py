@@ -18,10 +18,13 @@ class DataStruct:
         self.data = ''         # 测试数据
         self.header = ''       # header
         self.assert_1 = ''     # 需要检测的内容1
+        self.assert_1_db = ''  # 存入DB值
         self.assert_1_value = ''    # 内容1返回值
         self.assert_2 = ''     # 需要检测的内容2
+        self.assert_2_db = ''  # 存入DB值
         self.assert_2_value = ''    # 内容2返回值
         self.assert_3 = ''     # 需要检测的内容3
+        self.assert_3_db = ''  # 存入DB值
         self.assert_3_value = ''    # 内容3返回值
         self.return_code = ''  # 返回值
         self.return_msg = ''   # 返回信息

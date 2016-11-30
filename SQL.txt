@@ -31,3 +31,23 @@ ADD COLUMN `Assert_2_Resault`  varchar(255) NULL AFTER `Assert_2`,
 ADD COLUMN `Assert_3`  varchar(255) NULL AFTER `Assert_2_Resault`,
 ADD COLUMN `Assert_3_Resault`  varchar(255) NULL AFTER `Assert_3`;
 
+
+----------------------- 2016.11.30 不懂 -----------------------
+# 断言字段改名
+
+ALTER TABLE `test_data`
+CHANGE COLUMN `Assert_1_Resault` `Assert_1_Value`  varchar(255) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL AFTER `Assert_1`,
+CHANGE COLUMN `Assert_2_Resault` `Assert_2_Value`  varchar(255) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL AFTER `Assert_2`,
+CHANGE COLUMN `Assert_3_Resault` `Assert_3_Value`  varchar(255) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL AFTER `Assert_3`;
+
+
+# 修改字段code码
+
+ALTER TABLE `test_data`
+MODIFY COLUMN `Assert_1`  varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL AFTER `Header`,
+MODIFY COLUMN `Assert_1_Value`  varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL AFTER `Assert_1`,
+MODIFY COLUMN `Assert_2`  varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL AFTER `Assert_1_Value`,
+MODIFY COLUMN `Assert_2_Value`  varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL AFTER `Assert_2`,
+MODIFY COLUMN `Assert_3`  varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL AFTER `Assert_2_Value`,
+MODIFY COLUMN `Assert_3_Value`  varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL AFTER `Assert_3`;
+

@@ -9,8 +9,8 @@ __author__ = '不懂'
 
 
 class Excel:
-    #def __init__(self, path='excel\\interface_caselist.xls'):
-    def __init__(self, path='excel\\test.xls'):
+    def __init__(self, path='excel\\interface_caselist.xls'):
+    #def __init__(self, path='excel\\test.xls'):
         self.path = path
 
     def open_excel(self):
@@ -58,7 +58,6 @@ class Excel:
             print 'write successfully, current case_ID is %d' % row
         except Exception, e:
             print str(e)
-
 
     def write_return_code(self, row, value):
         """写入return code"""
