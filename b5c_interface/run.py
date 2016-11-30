@@ -17,7 +17,8 @@ class Run(unittest.TestCase):
         self.exc = Excel()
         self.row_data = self.exc.row_data()  # 返回所有excel的行数据，与列名成键值对
         self.msql = MySQL()
-        self.msql.delete("TRUNCATE TABLE `test_data`")  # 删除所有数据
+        #self.msql.delete("TRUNCATE TABLE `test_data`")  # 删除所有数据
+        self.msql.delete("DELETE FROM `test_data`")  # 删除所有数据
         self.http = HttpService()
 
     def tearDown(self):
