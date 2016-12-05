@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fefe0ee0-5e80-422a-9db8-270853c8b56f" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/b5c_interface/log.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/b5c_interface/excel/interface_caselist.xls" afterPath="$PROJECT_DIR$/b5c_interface/excel/interface_caselist.xls" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Readme.txt" afterPath="$PROJECT_DIR$/Readme.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/b5c_interface/excelLoad.py" afterPath="$PROJECT_DIR$/b5c_interface/excelLoad.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/b5c_interface/http_service.py" afterPath="$PROJECT_DIR$/b5c_interface/http_service.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/b5c_interface/mysql.py" afterPath="$PROJECT_DIR$/b5c_interface/mysql.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/b5c_interface/run.py" afterPath="$PROJECT_DIR$/b5c_interface/run.py" />
     </list>
     <ignored path="python_interface.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -73,8 +66,8 @@
       <file leaf-file-name="run.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/b5c_interface/run.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="762">
-              <caret line="57" column="42" selection-start-line="57" selection-start-column="42" selection-end-line="57" selection-end-column="42" />
+            <state relative-caret-position="394">
+              <caret line="41" column="36" selection-start-line="41" selection-start-column="36" selection-end-line="41" selection-end-column="36" />
               <folding>
                 <element signature="e#24#39#0" expanded="true" />
                 <marker date="1480940971940" expanded="true" signature="556:579" ph="DELETE FROM " />
@@ -1177,8 +1170,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/b5c_interface/run.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="762">
-          <caret line="57" column="42" selection-start-line="57" selection-start-column="42" selection-end-line="57" selection-end-column="42" />
+        <state relative-caret-position="394">
+          <caret line="41" column="36" selection-start-line="41" selection-start-column="36" selection-end-line="41" selection-end-column="36" />
           <folding>
             <element signature="e#24#39#0" expanded="true" />
             <marker date="1480940971940" expanded="true" signature="556:579" ph="DELETE FROM " />
