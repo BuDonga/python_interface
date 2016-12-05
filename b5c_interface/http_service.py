@@ -11,12 +11,14 @@ class HttpService:
         self.header = {}
         self.data = {}
         self.url = None
+        self.log = Log()
 
     def get_header(self):
         return self.header
 
     def set_header(self, header):
         self.header = eval(header)  # unicode 转 dict
+        self.log.info('set header successfully, current url is: ' + self.url)
 
     def get_data(self):
         return self.data
@@ -24,27 +26,32 @@ class HttpService:
     def set_data(self, data):
         if data.lower() == 'none':
             self.data = data
+            self.log.info('current DATA is NONE')
         else:
             self.data = json.dumps(eval(data))  # 转换成json data post
+            self.log.info('set DATA successfully!!')
 
     def get_url(self):
         return self.url
 
     def set_url(self, url):
         self.url = url
+        self.log.info('set URL successfully, current url is: ' + self.url)
 
     def request_get(self):
         """get请求"""
-        response = urllib2.urlopen(self.url)
-        content = json.loads(response.read())
-        return content
-        # try:
-        #     response = urllib2.urlopen(self.url)
-        #     content = json.loads(response.read())
-        #     return content
-        # except Exception, e:
-        #     print str(e)
-        #     return {}
+        # response = urllib2.urlopen(self.url)
+        # content = json.loads(response.read())
+        # self.log.info('get method ')
+        # return content
+        try:
+            response = urllib2.urlopen(self.url)
+            content = json.loads(response.read())
+            self.log.info('GET method successfully!!')
+            return content
+        except Exception, e:
+            self.log.info('GET method failed, error is: ' + str(e))
+            return {}
         # raise Exception
 
     def set_all(self, url, data, header):
@@ -58,9 +65,10 @@ class HttpService:
             req = urllib2.Request(url=self.url, headers=self.header, data=self.data)
             response = urllib2.urlopen(req)
             content = json.loads(response.read())
+            self.log.info('POST method successfully!!')
             return content
         except Exception, e:
-            print str(e)
+            self.log.info('POST method failed, error is: ' + str(e))
             return {}
 
     @staticmethod
@@ -76,7 +84,7 @@ class HttpService:
         print req1['data']['gudsId']
         print eval(req1['data']['gudsNewPrices'])[0]['price']
         print '-' * 30
-        # print str(req)
+
 
         """post method"""
         a = HttpService()

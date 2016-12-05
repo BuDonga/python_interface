@@ -2,6 +2,7 @@
 import xlrd
 import xlwt
 from xlutils.copy import copy
+from b5c_interface.log import Log
 from b5c_interface.mysql import *
 from b5c_interface.data_structure import *
 
@@ -11,6 +12,7 @@ __author__ = '不懂'
 class Excel:
     def __init__(self, path='excel\\interface_caselist.xls'):
     #def __init__(self, path='excel\\test.xls'):
+        self.log = Log()
         self.path = path
 
     def open_excel(self):
@@ -18,15 +20,18 @@ class Excel:
             data = xlrd.open_workbook(self.path)
             return data
         except Exception, e:
-            print str(e)
+            self.log.error('open excel error: ' + str(e))
 
     def row_data(self, colnameindex=0, by_index=0):
         """得到excel所有的行数据"""
         data = self.open_excel()
         table = data.sheets()[by_index]
         nrows = table.nrows  # 行数
+        self.log.info('total rows are: ' + str(nrows))
         ncols = table.ncols  # 列数
+        self.log.info('total columns are: ' + str(ncols))
         colnames = table.row_values(colnameindex)
+        self.log.info('column names are: ' + ','.join(colnames))
         data_list = []
         for i in range(1, nrows):
             app = {}
@@ -45,6 +50,7 @@ class Excel:
         """设置字体加粗"""
         if len(str(value)) > 32767:
             value = 'String longer than 32767 characters,please check it in report'
+            self.log.info(value)
         try:
             style = xlwt.XFStyle()
             font = xlwt.Font()
@@ -55,9 +61,9 @@ class Excel:
             newWs = newWb.get_sheet(by_index)
             newWs.write(row, column, value, style)
             newWb.save(self.path)
-            print 'write successfully, current case_ID is %d' % row
+            self.log.info('write successfully, current case_ID is %d' % row)
         except Exception, e:
-            print str(e)
+            self.log.error('write unsuccessfully, error is: ' + str(e))
 
     def write_return_code(self, row, value):
         """写入return code"""
@@ -94,7 +100,7 @@ class Excel:
             elif value.lower() == 'fail':
                 font.colour_index = 2  # 红色
             else:
-                print 'unknown return_status, please check'
+                self.log.error('unknown return_status, please check')
                 raise Exception('unknown return status!')
             style.font = font
             oldWb = xlrd.open_workbook(self.path, formatting_info=True)
@@ -102,9 +108,9 @@ class Excel:
             newWs = newWb.get_sheet(by_index)
             newWs.write(row, column, value.lower(), style)
             newWb.save(self.path)
-            print 'write return_status successfully, current case_ID is %d' % row
+            self.log.info('write return_status successfully, current case_ID is %d' % row)
         except Exception, e:
-            print str(e)
+            self.log.error('write return_status unsuccessfully, error is: ' + str(e))
 
     @staticmethod
     def test_excel():

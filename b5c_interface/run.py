@@ -20,6 +20,8 @@ class Run(unittest.TestCase):
         #self.msql.delete("TRUNCATE TABLE `test_data`")  # 删除所有数据
         self.msql.delete("DELETE FROM `test_data`")  # 删除所有数据
         self.http = HttpService()
+        Log.info('\n' * 2)
+        Log.info('-' * 50 + '    Runner start!!!    ' + '-' * 50)
 
     def tearDown(self):
         self.msql.close()

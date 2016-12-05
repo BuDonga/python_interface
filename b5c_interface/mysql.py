@@ -2,12 +2,14 @@
 from __future__ import with_statement
 import MySQLdb
 import ConfigParser
+from b5c_interface.log import Log
 
 __author__ = '不懂'
 
 
 class MySQL:
     def __init__(self):
+        self.log = Log()
         cf = ConfigParser.ConfigParser()
         cf.read(r'..\db_config.ini')
         self.host = cf.get('DATABASE1', 'host')
@@ -18,53 +20,53 @@ class MySQL:
         try:
             self.db = MySQLdb.connect(self.host, self.user, self.password, self.db)
             self.db.set_character_set('utf8')
+            self.log.info('MySql connect successfully!!!')
         except Exception, e:
-            print e
+            self.log.error('MySql connect failed, error is: ' + str(e))
             raise IOError('connection failed')
         self.cursor = self.db.cursor()
 
     def select(self, sql):
         self.cursor.execute(sql)
-        print '受影响的行数一共有%d行' % self.cursor.rowcount
+        self.log.info('%d lines is/are impacted' % self.cursor.rowcount)
+        self.log.info('SELECT successfully!!')
         return self.cursor.fetchall()
 
     def close(self):
         self.db.close()
-        print 'DB连接已关闭'
-        print '-' * 50
+        self.log.info('DB is closed!!!')
+        self.log.info('-' * 50)
 
     def insert(self, sql):
         try:
             self.cursor.execute(sql)
             self.db.commit()
-            print '受影响的行数一共有%d行' % self.cursor.rowcount
-            print '插入成功！！'
+            self.log.info('%d lines is/are impacted' % self.cursor.rowcount)
+            self.log.info('INSERT successfully!!')
         except Exception, e:
             self.db.rollback()
-            print '插入失败！！'
-            print e
+            self.log.error('INSERT failed, error is: ' + str(e))
 
     def update(self, sql):
         try:
             self.cursor.execute(sql)
             self.db.commit()
-            print '受影响的行数一共有%d行' % self.cursor.rowcount
-            print '更新成功！！'
+            self.log.info('%d lines is/are impacted' % self.cursor.rowcount)
+            self.log.info('UPDATED successfully!!')
         except Exception, e:
             self.db.rollback()
-            print '更新失败！！'
+            self.log.error('UPDATED failed, error is:' + str(e))
             print e
 
     def delete(self, sql):
         try:
             self.cursor.execute(sql)
             self.db.commit()
-            print '受影响的行数一共有%d行' % self.cursor.rowcount
-            print '删除成功！！'
+            self.log.info('%d lines is/are impacted' % self.cursor.rowcount)
+            self.log.info('DELETE successfully!!')
         except Exception, e:
             self.db.rollback()
-            print '删除失败！！'
-            print e
+            self.log.error('DELETE failed, error is:' + str(e))
 
     @staticmethod
     def test_sql():
