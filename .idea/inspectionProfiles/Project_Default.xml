@@ -9,5 +9,20 @@
         </list>
       </option>
     </inspection_tool>
+    <inspection_tool class="PyUnresolvedReferencesInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredIdentifiers">
+        <list>
+          <option value="b5c_interface.test.h1" />
+          <option value="b5c_interface.test.h2" />
+          <option value="b5c_interface.test.div" />
+          <option value="b5c_interface.test.h3" />
+          <option value="b5c_interface.test.p" />
+          <option value="b5c_interface.test.a" />
+          <option value="b5c_interface.test.span" />
+          <option value="b5c_interface.test.br" />
+          <option value="b5c_interface.test.img" />
+        </list>
+      </option>
+    </inspection_tool>
   </profile>
 </component>
