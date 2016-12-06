@@ -14,14 +14,15 @@ class Run(unittest.TestCase):
     def setUp(self):
         reload(sys)
         sys.setdefaultencoding("utf-8")
+        self.log = Log()
         self.exc = Excel()
         self.row_data = self.exc.row_data()  # 返回所有excel的行数据，与列名成键值对
         self.msql = MySQL()
         #self.msql.delete("TRUNCATE TABLE `test_data`")  # 删除所有数据
         self.msql.delete("DELETE FROM `test_data`")  # 删除所有数据
         self.http = HttpService()
-        Log.info('\n' * 2)
-        Log.info('-' * 50 + '    Runner start!!!    ' + '-' * 50)
+        self.log.info('\n' * 2)
+        self.log.info('-' * 50 + '    Runner start!!!    ' + '-' * 50)
 
     def tearDown(self):
         self.msql.close()
@@ -32,14 +33,22 @@ class Run(unittest.TestCase):
         for case in self.row_data:
             self.ds = DataStruct()  # 初始化结构体
             self.ds.case_id = int(case['Case ID'])
+            self.log.info('Case ID is: %s' % self.ds.case_id)
             self.ds.description = case['Description']
+            self.log.info('Description is: %s' % self.ds.description)
             self.ds.request_url = ''.join(str(self.ds.request_environment + case['Request Url']))
+            self.log.info('Request Url is: %s' % self.ds.request_url)
             self.ds.http_method = case['Method']
+            self.log.info('Method is: %s' % self.ds.http_method)
             self.ds.run_type = case['Run Type']
+            self.log.info('Run Type is: %s' % self.ds.run_type)
             self.ds.data = case['Data']
+            self.log.info('Post Data is: %s' % self.ds.data)
             self.ds.header = case['Header']
+            self.log.info('Header is: %s' % self.ds.header)
 
             if not case['Assert_1']:
+                self.log.info('Assert 1 is None')
                 self.ds.assert_1_db = None
                 self.ds.assert_1 = None
                 self.ds.assert_1_value = None
@@ -47,14 +56,15 @@ class Run(unittest.TestCase):
                 self.ds.assert_1_db = MySQLdb.escape_string(case['Assert_1'])  # 存入DB特殊字符处理
                 self.ds.assert_1 = 'req' + case['Assert_1']
                 if isinstance(case['Assert_1_Value'], (int, float)):  # 如果是int或者float类型，就不用MySQL string处理
+                    self.log.info('Assert_1_Value is int/float')
                     self.ds.assert_1_value = case['Assert_1_Value']
+                    self.log.info('Assert_1_Value is: %s' % str(self.ds.assert_1_value))
                 else:
                     self.ds.assert_1_value = MySQLdb.escape_string(case['Assert_1_Value'])  # 存入DB特殊字符处理
-            print 'assert 1'
-
-            print case['Assert_1_Value'], type(case['Assert_1_Value'])
+                    self.log.info('Assert_1_Value is: %s' % str(self.ds.assert_1_value))
 
             if not case['Assert_2']:
+                self.log.info('Assert 2 is None')
                 self.ds.assert_2_db = None
                 self.ds.assert_2 = None
                 self.ds.assert_2_value = None
@@ -62,13 +72,15 @@ class Run(unittest.TestCase):
                 self.ds.assert_2_db = MySQLdb.escape_string(case['Assert_2'])
                 self.ds.assert_2 = 'req' + case['Assert_2']
                 if isinstance(case['Assert_2_Value'], (int, float)):
+                    self.log.info('Assert_2_Value is int/float')
                     self.ds.assert_2_value = case['Assert_2_Value']
+                    self.log.info('Assert_2_Value is: %s' % str(self.ds.assert_2_value))
                 else:
                     self.ds.assert_2_value = MySQLdb.escape_string(case['Assert_2_Value'])  # 存入DB特殊字符处理
-            print 'assert 2'
-            print case['Assert_2_Value'], type(case['Assert_2_Value'])
+                    self.log.info('Assert_2_Value is: %s' % str(self.ds.assert_2_value))
 
             if not case['Assert_3']:
+                self.log.info('Assert 3 is None')
                 self.ds.assert_3_db = None
                 self.ds.assert_3 = None
                 self.ds.assert_3_value = None
@@ -76,11 +88,12 @@ class Run(unittest.TestCase):
                 self.ds.assert_3_db = MySQLdb.escape_string(case['Assert_3'])
                 self.ds.assert_3 = 'req' + case['Assert_3']
                 if isinstance(case['Assert_3_Value'], (int, float)):
+                    self.log.info('Assert_3_Value is int/float')
                     self.ds.assert_3_value = case['Assert_3_Value']
+                    self.log.info('Assert_3_Value is: %s' % str(self.ds.assert_3_value))
                 else:
                     self.ds.assert_3_value = MySQLdb.escape_string(case['Assert_3_Value'])  # 存入DB特殊字符处理
-            print 'assert 3'
-            print case['Assert_3_Value']
+                    self.log.info('Assert_3_Value is: %s' % str(self.ds.assert_3_value))
 
             """设置参数"""
             self.http.set_all(self.ds.request_url, self.ds.data, self.ds.header)
@@ -93,24 +106,29 @@ class Run(unittest.TestCase):
 
             """获取返回值"""
             self.ds.return_code = req['code']
+            self.log.info('Return Code is: %s' % self.ds.return_code)
             self.ds.return_data = json.dumps(req['data'])  # 去除'u'
             #self.ds.return_data = MySQLdb.escape_string(self.ds.return_data)  # 去除特殊符号'，如果数据带这个特殊符号会导致写入DB报错，what the fuck! 大坑！！！！
             self.ds.return_msg = req['msg']
+            self.log.info('Return Message is: %s' % self.ds.return_msg)
 
             """效验模块，效验http返回值，以及excel设置的断言"""
             try:
                 if not (self.assertEquals(self.ds.return_code, 2000) or self.assertEquals(self.ds.return_msg,
                                                                                           'success')):
+                    self.log.info('Return Code is 2000, success')
                     if self.ds.assert_1_value:   # 断言1验证
                         self.assertEqual(self.ds.assert_1_value, eval(self.ds.assert_1))
+                        self.log.info('Assert 1 passed')
                     if self.ds.assert_2_value:  # 断言2验证
                        self.assertEqual(self.ds.assert_2_value, eval(self.ds.assert_2))
+                       self.log.info('Assert 2 passed')
                     if self.ds.assert_3_value:  # 断言3验证
                         self.assertEqual(self.ds.assert_3_value, eval(self.ds.assert_3))
+                        self.log.info('Assert 3 passed')
                     self.deal_ok()
             except Exception, e:
                 self.deal_exception(e)
-                print e
 
     def deal_ok(self):
         self.exc.write_return_data(self.ds.case_id, self.ds.return_data)
@@ -122,7 +140,7 @@ class Run(unittest.TestCase):
                 self.ds.case_id, self.ds.description, self.ds.request_url, self.ds.http_method,
                 self.ds.run_type, self.ds.data, self.ds.header, self.ds.assert_1_db, self.ds.assert_1_value, self.ds.assert_2_db, self.ds.assert_2_value, self.ds.assert_3_db, self.ds.assert_3_value, self.ds.return_code, MySQLdb.escape_string(self.ds.error_msg),
                 MySQLdb.escape_string(self.ds.return_data), 'pass'))
-        print 'ok'
+        self.log.info('deal ok')
 
     def deal_exception(self, msg):
         self.ds.error_msg = str(msg)
@@ -137,6 +155,7 @@ class Run(unittest.TestCase):
                 self.ds.case_id, self.ds.description, self.ds.request_url, self.ds.http_method,
                 self.ds.run_type, self.ds.data, self.ds.header, self.ds.assert_1_db, self.ds.assert_1_value, self.ds.assert_2_db, self.ds.assert_2_value, self.ds.assert_3_db, self.ds.assert_3_value, self.ds.return_code, MySQLdb.escape_string(self.ds.error_msg),
                 MySQLdb.escape_string(self.ds.return_data), 'fail'))
+        self.log.info('deal error, error is: %s' % str(msg))
 
 if __name__ == '__main__':
     unittest.main()
