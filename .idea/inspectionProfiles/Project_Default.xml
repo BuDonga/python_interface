@@ -21,6 +21,9 @@
           <option value="b5c_interface.test.span" />
           <option value="b5c_interface.test.br" />
           <option value="b5c_interface.test.img" />
+          <option value="b5c_interface.test.table" />
+          <option value="b5c_interface.test.tr" />
+          <option value="b5c_interface.test.td" />
         </list>
       </option>
     </inspection_tool>
