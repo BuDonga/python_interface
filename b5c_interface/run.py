@@ -5,6 +5,7 @@ from b5c_interface.excelLoad import *
 from b5c_interface.http_service import *
 from b5c_interface.mysql import *
 import sys
+import time
 
 
 __author__ = '不懂'
@@ -14,6 +15,12 @@ class Run(unittest.TestCase):
     def setUp(self):
         reload(sys)
         sys.setdefaultencoding("utf-8")
+        cf = ConfigParser.ConfigParser()
+        cf.read(r'..\run_mode.ini')
+        self.need_report = cf.get('RUNMODE', 'need_report')
+        self.start_time = '00:00:00'  # 运行开始时间（报告显示用）
+        self.end_time = '00:00:00'  # 运行结束时间（报告显示用）
+        self.show_end_time = 0  # 用于计算的结束时间（报告计算用）
         self.log = Log()
         self.exc = Excel()
         self.row_data = self.exc.row_data()  # 返回所有excel的行数据，与列名成键值对
@@ -25,9 +32,22 @@ class Run(unittest.TestCase):
         self.log.info('-' * 50 + '    Runner start!!!    ' + '-' * 50)
 
     def tearDown(self):
+        self.end_time = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime())
+        self.show_end_time = time.clock()
+        self.log.info('end time is %s' % self.start_time)
         self.msql.close()
 
+        # 选择是否生成report，1生成，0不生成
+        if int(self.need_report) == 1:
+            from b5c_interface.report import HTMLReport
+            report = HTMLReport()
+            report.generate_report(self.start_time, self.end_time, self.show_end_time)
+        print 'testing is over!!!'
+
     def test_run_case(self):
+        print 'start running...'
+        self.start_time = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime())
+        self.log.info('start time is %s' % self.start_time)
         """循环case"""
         """获取excel中的值"""
         for case in self.row_data:
@@ -127,6 +147,7 @@ class Run(unittest.TestCase):
                         self.assertEqual(self.ds.assert_3_value, eval(self.ds.assert_3))
                         self.log.info('Assert 3 passed')
                     self.deal_ok()
+                    #time.sleep(1)
             except Exception, e:
                 self.deal_exception(e)
 

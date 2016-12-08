@@ -24,6 +24,9 @@
           <option value="b5c_interface.test.table" />
           <option value="b5c_interface.test.tr" />
           <option value="b5c_interface.test.td" />
+          <option value="b5c_interface.test.head" />
+          <option value="b5c_interface.report.h1" />
+          <option value="b5c_interface.report.*" />
         </list>
       </option>
     </inspection_tool>
