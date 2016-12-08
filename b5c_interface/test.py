@@ -9,7 +9,7 @@ from mysql import *
 
 class HTMLReport:
     def __init__(self, cursor):
-        self.title = 'test_report_page'  # 网页标签名称
+        self.title = 'test_report'  # 网页标签名称
         self.filename = ''  # 结果文件名
         self.time_took = '00:00:00'  # 测试耗时
         self.success_num = 1  # 测试通过的用例数

@@ -11,13 +11,14 @@ __author__ = '不懂'
 
 class HTMLReport:
     def __init__(self):
-        self.title = 'B5C test report'  # 网页标签名称
+        self.title = 'Interface Test Report'  # 网页标签名称
         self.filename = ''  # 结果文件名
         self.time_took = 0  # 测试耗时
         self.pass_num = 0  # 测试通过的用例数
         self.fail_num = 0  # 测试失败的用例数
         self.total_case_num = 0  # 运行测试用例总数
         self.sql = MySQL()
+        self.log = Log()
 
     @staticmethod
     # 获取报告名字
@@ -51,7 +52,7 @@ class HTMLReport:
 
         # pyh生成html代码
         page = PyH(self.title)
-        page << h1('帮5采接口测试报告', align='center')  # 标题居中
+        page << h1('接口测试报告', align='center')  # 标题居中
         page << p('开始时间：' + str(start_time))
         page << p('结束时间：' + str(end_time))
         page << p('测试总耗时：' + str(self.time_took) + 's')
@@ -83,7 +84,11 @@ class HTMLReport:
                        td(row[17], style=font_colour, align='center'))
 
         # 生成报告文件
-        page.printOut('..\\report\\' + self.filename + '.html')
+        try:
+            page.printOut('..\\report\\' + self.filename + '.html')
+            self.log.info('report is generated successfully!!')
+        except Exception, e:
+            self.log.error('report is failed!!, reason is: ' + str(e))
         self.sql.close()
 
 
