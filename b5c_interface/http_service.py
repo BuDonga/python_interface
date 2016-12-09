@@ -50,7 +50,7 @@ class HttpService:
             self.log.info('GET method successfully!!')
             return content
         except Exception, e:
-            self.log.info('GET method failed, error is: ' + str(e))
+            self.log.error('GET method failed, error is: ' + str(e))
             return {}
         # raise Exception
 
@@ -68,7 +68,7 @@ class HttpService:
             self.log.info('POST method successfully!!')
             return content
         except Exception, e:
-            self.log.info('POST method failed, error is: ' + str(e))
+            self.log.error('POST method failed, error is: ' + str(e))
             return {}
 
     @staticmethod

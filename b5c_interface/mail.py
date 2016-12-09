@@ -25,8 +25,8 @@ class Mail:
         self.mail_postfix = cf.get('MAIL', 'mail_postfix')  # 发件箱的后缀
         self.me = u'郭淮' + "<" + self.mail_user + "@" + self.mail_postfix + ">"
         self.report_path = ''.join(('..\\', 'report\\', self.report))
-        self.content = ''  # 发送邮件内容
-        self.body = ''  # 附件
+        self.content = ''  # 发送邮件内容（处理前）
+        self.body = ''  # 发送邮件内容（处理后）
 
     def get_newest_report(self):
         """根据创建时间排序，得到最新的测试报告
