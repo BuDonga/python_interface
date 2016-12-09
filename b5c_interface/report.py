@@ -82,6 +82,7 @@ class HTMLReport:
                        td(row[3]) + td(row[4], align='center') +
                        td(row[6], align='center') + td(row[14], align='center') + td(row[15]) +
                        td(row[17], style=font_colour, align='center'))
+            page << p('<br/>')
 
         # 生成报告文件
         try:

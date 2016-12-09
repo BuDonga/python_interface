@@ -1,0 +1,171 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"><head><title>Interface Test Report</title>
+</head>
+<body><h1 align="center">接口测试报告</h1>
+<p>开始时间：2016-12-09 13:46:13</p>
+<p>结束时间：2016-12-09 13:46:14</p>
+<p>测试总耗时：1.0s</p>
+<p>测试用例数：10&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp成功用例数：7&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp失败用例数：3</p>
+<table cellpadding="1" cellspacing="0" border="1" class="table"><tr><td bgcolor="#ABABAB" align="center">用例ID</td>
+<td bgcolor="#ABABAB" align="center">接口描述</td>
+<td bgcolor="#ABABAB" align="center">请求URL</td>
+<td bgcolor="#ABABAB" align="center">方法</td>
+<td bgcolor="#ABABAB" align="center">请求数据</td>
+<td bgcolor="#ABABAB" align="center">返回值</td>
+<td bgcolor="#ABABAB" align="center">返回信息</td>
+<td bgcolor="#ABABAB" align="center">用例状态</td>
+
+</tr>
+<tr><td align="center">1</td>
+<td>根据用户ID获取购物车商品信息(Cart _3)</td>
+<td>http://b5caiapi.stage.com/cart/showcart.json?account=15921826291</td>
+<td align="center">get</td>
+<td align="center">none</td>
+<td align="center">2000</td>
+<td>'skinfood_80001306_1' != u'artchip2014_80000516_1'</td>
+<td align="center" style="color:#FF2D2D">fail</td>
+
+</tr>
+<tr><td align="center">2</td>
+<td>运费计算</td>
+<td>http://b5caiapi.stage.com/logistics/calculateLogisticsFee.json</td>
+<td align="center">post</td>
+<td align="center">{"adprAddr":"u4e0au6d77","transCheCd":"FISHER","tbMsOrdGudsOptDtos":[{"gudsId":80000664,"sllrId":"innisfree","ordGudsQty":1}]}</td>
+<td align="center">2000</td>
+<td></td>
+<td align="center" style="color:#64A600">pass</td>
+
+</tr>
+<tr><td align="center">3</td>
+<td>主页的top栏(Home_3)</td>
+<td>http://b5caiapi.stage.com/index/topbnr.json</td>
+<td align="center">get</td>
+<td align="center">none</td>
+<td align="center">2000</td>
+<td></td>
+<td align="center" style="color:#64A600">pass</td>
+
+</tr>
+<tr><td align="center">4</td>
+<td>主页的new Brand(Home_3)</td>
+<td>http://b5caiapi.stage.com/index/newbrand.json</td>
+<td align="center">get</td>
+<td align="center">none</td>
+<td align="center">2000</td>
+<td></td>
+<td align="center" style="color:#64A600">pass</td>
+
+</tr>
+<tr><td align="center">5</td>
+<td>商品详情(Goods_1)</td>
+<td>http://b5caiapi.stage.com/goods/detail.json?sllrId=snp&gudsId=80000301</td>
+<td align="center">get</td>
+<td align="center">none</td>
+<td align="center">2000</td>
+<td></td>
+<td align="center" style="color:#64A600">pass</td>
+
+</tr>
+<tr><td align="center">6</td>
+<td>根据更新时间获取商品（Goods_2）</td>
+<td>http://b5caiapi.stage.com/goods/goodslist_by_updatetime.json?time=1474953937151</td>
+<td align="center">get</td>
+<td align="center">none</td>
+<td align="center">40056008</td>
+<td>40056008 != 2000</td>
+<td align="center" style="color:#FF2D2D">fail</td>
+
+</tr>
+<tr><td align="center">7</td>
+<td>向购物车添加（减少）商品(Cart _1)</td>
+<td>http://b5caiapi.stage.com/cart/add2cart.json?account=13816239566&sllrId=rheobenison&gudsId=80000160&gudsOptIdAndCount=8000016001:1,8000016002:22</td>
+<td align="center">post</td>
+<td align="center">none</td>
+<td align="center">2000</td>
+<td></td>
+<td align="center" style="color:#64A600">pass</td>
+
+</tr>
+<tr><td align="center">8</td>
+<td>从购物车剔除商品(Cart _2)</td>
+<td>http://b5caiapi.stage.com/cart/delfromcart.json?account=13816239566&sllrId=rheobenison&gudsId=80000160</td>
+<td align="center">post</td>
+<td align="center">none</td>
+<td align="center">2000</td>
+<td></td>
+<td align="center" style="color:#64A600">pass</td>
+
+</tr>
+<tr><td align="center">9</td>
+<td>根据用户ID获取购物车商品信息(Cart _3)</td>
+<td>http://b5caiapi.stage.com/cart/showcart.json?account=15921826291</td>
+<td align="center">get</td>
+<td align="center">none</td>
+<td align="center">2000</td>
+<td></td>
+<td align="center" style="color:#64A600">pass</td>
+
+</tr>
+<tr><td align="center">10</td>
+<td>根据用户id获取所有收货地址(Addr_4)</td>
+<td>http://b5caiapi.stage.com/address/getall.json?custId=15921826291</td>
+<td align="center">get</td>
+<td align="center">none</td>
+<td align="center">2000</td>
+<td>'guohuai111' != u'guohuai'</td>
+<td align="center" style="color:#FF2D2D">fail</td>
+
+</tr>
+</table>
+<p><br/></p>
+<p><br/></p>
+<p><br/></p>
+<p><br/></p>
+<p><br/></p>
+<p><br/></p>
+<p><br/></p>
+<p><br/></p>
+<p><br/></p>
+<p><br/></p>
+<p><br/></p>
+<p><br/></p>
+<p><br/></p>
+<p><br/></p>
+<p><br/></p>
+<p><br/></p>
+<p><br/></p>
+<p><br/></p>
+<p><br/></p>
+<p><br/></p>
+<p><br/></p>
+<p><br/></p>
+<p><br/></p>
+<p><br/></p>
+<p><br/></p>
+<p><br/></p>
+<p><br/></p>
+<p><br/></p>
+<p><br/></p>
+<p><br/></p>
+<p><br/></p>
+<p><br/></p>
+<p><br/></p>
+<p><br/></p>
+<p><br/></p>
+<p><br/></p>
+<p><br/></p>
+<p><br/></p>
+<p><br/></p>
+<p><br/></p>
+<p><br/></p>
+<p><br/></p>
+<p><br/></p>
+<p><br/></p>
+<p><br/></p>
+<p><br/></p>
+<p><br/></p>
+<p><br/></p>
+<p><br/></p>
+<p><br/></p>
+</body>
+</html>

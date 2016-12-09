@@ -18,6 +18,7 @@ class Run(unittest.TestCase):
         cf = ConfigParser.ConfigParser()
         cf.read(r'..\run_mode.ini')
         self.need_report = cf.get('RUNMODE', 'need_report')
+        self.need_mail = cf.get('MAIL', 'need_mail')
         self.start_time = '00:00:00'  # 运行开始时间（报告显示用）
         self.end_time = '00:00:00'  # 运行结束时间（报告显示用）
         self.show_end_time = 0  # 用于计算的结束时间（报告计算用）
@@ -43,6 +44,17 @@ class Run(unittest.TestCase):
             report = HTMLReport()
             report.generate_report(self.start_time, self.end_time, self.show_end_time)
         print 'testing is over!!!'
+
+        # 选择是否需要发送邮件，1发送，0不发送
+        if int(self.need_mail) == 1:
+            from b5c_interface.mail import Mail
+            mail = Mail()
+            if mail.send_mail():
+                self.log.info('mail send successfully!!')
+                print 'mail send successfully!!'
+            else:
+                self.log.info('mail failed!!')
+                print 'mail failed!!'
 
     def test_run_case(self):
         print 'start running...'
