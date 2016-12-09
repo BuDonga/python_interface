@@ -29,8 +29,7 @@ class Run(unittest.TestCase):
         #self.msql.delete("TRUNCATE TABLE `test_data`")  # 删除所有数据
         self.msql.delete("DELETE FROM `test_data`")  # 删除所有数据
         self.http = HttpService()
-        self.log.info('\n' * 2)
-        self.log.info('-' * 50 + '    Runner start!!!    ' + '-' * 50)
+        self.log.info('\n' * 2 + '-' * 50 + '    Runner start!!!    ' + '-' * 50)
 
     def tearDown(self):
         self.end_time = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime())
@@ -65,7 +64,7 @@ class Run(unittest.TestCase):
         for case in self.row_data:
             self.ds = DataStruct()  # 初始化结构体
             self.ds.case_id = int(case['Case ID'])
-            self.log.info('Case ID is: %s' % self.ds.case_id)
+            self.log.info('-' * 25 + '    case %s started!!!    ' % str(int(case['Case ID'])) + '-' * 25)
             self.ds.description = case['Description']
             self.log.info('Description is: %s' % self.ds.description)
             self.ds.request_url = ''.join(str(self.ds.request_environment + case['Request Url']))
@@ -174,6 +173,7 @@ class Run(unittest.TestCase):
                 self.ds.run_type, self.ds.data, self.ds.header, self.ds.assert_1_db, self.ds.assert_1_value, self.ds.assert_2_db, self.ds.assert_2_value, self.ds.assert_3_db, self.ds.assert_3_value, self.ds.return_code, MySQLdb.escape_string(self.ds.error_msg),
                 MySQLdb.escape_string(self.ds.return_data), 'pass'))
         self.log.info('deal ok')
+        self.log.info('-' * 25 + '    running over!!!    ' + '-' * 25 + '\n')
 
     def deal_exception(self, msg):
         self.ds.error_msg = str(msg)
@@ -189,6 +189,7 @@ class Run(unittest.TestCase):
                 self.ds.run_type, self.ds.data, self.ds.header, self.ds.assert_1_db, self.ds.assert_1_value, self.ds.assert_2_db, self.ds.assert_2_value, self.ds.assert_3_db, self.ds.assert_3_value, self.ds.return_code, MySQLdb.escape_string(self.ds.error_msg),
                 MySQLdb.escape_string(self.ds.return_data), 'fail'))
         self.log.info('deal error, error is: %s' % str(msg))
+        self.log.info('-' * 25 + '    running over!!!    ' + '-' * 25 + '\n')
 
 if __name__ == '__main__':
     unittest.main()
