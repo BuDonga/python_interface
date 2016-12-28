@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 import unittest
-from b5c_interface.data_structure import *
-from b5c_interface.excelLoad import *
-from b5c_interface.http_service import *
-from b5c_interface.mysql import *
+from b5c_interface.DataStruct import *
+from b5c_interface.Excel import *
+from b5c_interface.HttpService import *
+from b5c_interface.MySQL import *
 import sys
 import time
 
@@ -39,14 +39,14 @@ class Run(unittest.TestCase):
 
         # 选择是否生成report，1生成，0不生成
         if int(self.need_report) == 1:
-            from b5c_interface.report import HTMLReport
+            from b5c_interface.HTMLReport import HTMLReport
             report = HTMLReport()
             report.generate_report(self.start_time, self.end_time, self.show_end_time)
         print 'testing is over!!!'
 
         # 选择是否需要发送邮件，1发送，0不发送
         if int(self.need_mail) == 1:
-            from b5c_interface.mail import Mail
+            from b5c_interface.Mail import Mail
             mail = Mail()
             if mail.send_mail():
                 self.log.info('mail send successfully!!')
@@ -188,7 +188,7 @@ class Run(unittest.TestCase):
                 self.ds.case_id, self.ds.description, self.ds.request_url, self.ds.http_method,
                 self.ds.run_type, self.ds.data, self.ds.header, self.ds.assert_1_db, self.ds.assert_1_value, self.ds.assert_2_db, self.ds.assert_2_value, self.ds.assert_3_db, self.ds.assert_3_value, self.ds.return_code, MySQLdb.escape_string(self.ds.error_msg),
                 MySQLdb.escape_string(self.ds.return_data), 'fail'))
-        self.log.info('deal error, error is: %s' % str(msg))
+        self.log.error('deal error, error is: %s' % str(msg))
         self.log.info('-' * 25 + '    running over!!!    ' + '-' * 25 + '\n')
 
 if __name__ == '__main__':

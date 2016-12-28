@@ -1,17 +1,17 @@
 # -*- coding:utf-8 -*-
 import urllib2
 import json
-from b5c_interface.excelLoad import *
+from b5c_interface.Excel import *
 
 __author__ = '不懂'
 
 
-class HttpService:
+class HttpService(BaseMode.BaseMode):
     def __init__(self):
+        BaseMode.BaseMode.__init__(self)
         self.header = {}
         self.data = {}
         self.url = None
-        self.log = Log()
 
     def get_header(self):
         return self.header

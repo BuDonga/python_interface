@@ -1,28 +1,27 @@
-# -*- coding: utf-8 -*-
-
-import threading
-from time import ctime,sleep
+import test
 
 
-def music(func):
-    for i in range(2):
-        print "I was listening to %s. %s" %(func,ctime())
-        sleep(1)
+class a:
+    def __init__(self):
+        print 'a.init'
+        self.c = 'nihao'
 
-def move(func):
-    for i in range(2):
-        print "I was at the %s! %s" %(func,ctime())
-        sleep(5)
+    def printa(self):
+        print 'aaaaa'
 
-threads = []
-t1 = threading.Thread(target=music,args=(u'爱情买卖',))
-threads.append(t1)
-t2 = threading.Thread(target=move,args=(u'阿凡达',))
-threads.append(t2)
+    def printb(self):
+        print 'bbbb'
+
+class b(test.a):
+    def __init__(self):
+        test.a.__init__(self)
+
+    def printa(self):
+        print 'bbbb'
+
 
 if __name__ == '__main__':
-    for t in threads:
-        t.setDaemon(True)
-        t.start()
-
-    print "all over %s" %ctime()
+    d = b()
+    d.printa()
+    d.printb()
+    print d.c

@@ -2,17 +2,16 @@
 import xlrd
 import xlwt
 from xlutils.copy import copy
-from b5c_interface.log import Log
-from b5c_interface.mysql import *
-from b5c_interface.data_structure import *
+from b5c_interface.Log import Log
+from b5c_interface.MySQL import *
+from b5c_interface.DataStruct import *
 
 __author__ = '不懂'
 
 
-class Excel:
+class Excel(BaseMode.BaseMode):
     def __init__(self, path='excel\\interface_caselist.xls'):
-    #def __init__(self, path='excel\\test.xls'):
-        self.log = Log()
+        BaseMode.BaseMode.__init__(self)
         self.path = path
 
     def open_excel(self):

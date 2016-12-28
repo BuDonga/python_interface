@@ -2,7 +2,9 @@
 import ConfigParser
 import os
 import smtplib
-from b5c_interface.log import Log
+
+from b5c_interface import BaseMode
+from b5c_interface.Log import Log
 from email.mime.application import MIMEApplication
 from email.mime.text import MIMEText
 from email.header import Header
@@ -11,18 +13,17 @@ from email.mime.multipart import MIMEMultipart
 __author__ = '不懂'
 
 
-class Mail:
+class Mail(BaseMode.BaseMode):
     def __init__(self):
-        cf = ConfigParser.ConfigParser()
-        cf.read(r'..\run_mode.ini')
-        self.log = Log()
+        BaseMode.BaseMode.__init__(self)
+        self.cf.read(r'..\run_mode.ini')
         self.report = self.get_newest_report()  # 得到最新生成的report名字
-        self.mailto_list = cf.get('MAIL', 'mailto_list')
+        self.mailto_list = self.cf.get('MAIL', 'mailto_list')
         # mailto_list = ['guohuai@b5m.com', '595220635@qq.com']  # 收件组
-        self.mail_host = cf.get('MAIL', 'mail_host')  # 设置服务器
-        self.mail_user = cf.get('MAIL', 'mail_user')  # 用户名
-        self.mail_pass = cf.get('MAIL', 'mail_password')  # 口令
-        self.mail_postfix = cf.get('MAIL', 'mail_postfix')  # 发件箱的后缀
+        self.mail_host = self.cf.get('MAIL', 'mail_host')  # 设置服务器
+        self.mail_user = self.cf.get('MAIL', 'mail_user')  # 用户名
+        self.mail_pass = self.cf.get('MAIL', 'mail_password')  # 口令
+        self.mail_postfix = self.cf.get('MAIL', 'mail_postfix')  # 发件箱的后缀
         self.me = u'郭淮' + "<" + self.mail_user + "@" + self.mail_postfix + ">"
         self.report_path = ''.join(('..\\', 'report\\', self.report))
         self.content = ''  # 发送邮件内容（处理前）

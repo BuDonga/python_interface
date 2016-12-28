@@ -2,21 +2,22 @@
 from __future__ import with_statement
 import MySQLdb
 import ConfigParser
-from b5c_interface.log import Log
+
+from b5c_interface import BaseMode
+from b5c_interface.Log import Log
 
 __author__ = '不懂'
 
 
-class MySQL:
+class MySQL(BaseMode.BaseMode):
     def __init__(self):
-        self.log = Log()
-        cf = ConfigParser.ConfigParser()
-        cf.read(r'..\db_config.ini')
-        self.host = cf.get('DATABASE1', 'host')
-        self.port = cf.get('DATABASE1', 'port')
-        self.user = cf.get('DATABASE1', 'user')
-        self.password = cf.get('DATABASE1', 'password')
-        self.db = cf.get('DATABASE1', 'db')
+        BaseMode.BaseMode.__init__(self)
+        self.cf.read(r'..\db_config.ini')
+        self.host = self.cf.get('DATABASE1', 'host')
+        self.port = self.cf.get('DATABASE1', 'port')
+        self.user = self.cf.get('DATABASE1', 'user')
+        self.password = self.cf.get('DATABASE1', 'password')
+        self.db = self.cf.get('DATABASE1', 'db')
         try:
             self.db = MySQLdb.connect(self.host, self.user, self.password, self.db)
             self.db.set_character_set('utf8')

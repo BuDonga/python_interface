@@ -3,14 +3,15 @@ import os
 import time
 from pyh import *
 import sys
-from mysql import *
+from MySQL import *
 
 
 __author__ = '不懂'
 
 
-class HTMLReport:
+class HTMLReport(BaseMode.BaseMode):
     def __init__(self):
+        BaseMode.BaseMode.__init__(self)
         self.title = 'Interface Test Report'  # 网页标签名称
         self.filename = ''  # 结果文件名
         self.time_took = 0  # 测试耗时
@@ -18,7 +19,7 @@ class HTMLReport:
         self.fail_num = 0  # 测试失败的用例数
         self.total_case_num = 0  # 运行测试用例总数
         self.sql = MySQL()
-        self.log = Log()
+
 
     @staticmethod
     # 获取报告名字
