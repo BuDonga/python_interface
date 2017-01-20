@@ -1,10 +1,15 @@
 # -*- coding: utf-8 -*-
 import unittest
+import sys
+import os
+curPath = os.path.abspath(os.path.dirname(__file__))
+rootPath = os.path.split(curPath)[0]
+sys.path.append(rootPath)
+
 from b5c_interface.DataStruct import *
 from b5c_interface.Excel import *
 from b5c_interface.HttpService import *
 from b5c_interface.MySQL import *
-import sys
 import time
 
 

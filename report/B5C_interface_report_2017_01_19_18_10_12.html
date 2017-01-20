@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"><head><title>Interface Test Report</title>
+</head>
+<body><h1 align="center">接口测试报告</h1>
+<p>开始时间：2017-01-19 18:10:12</p>
+<p>结束时间：2017-01-19 18:10:12</p>
+<p>测试总耗时：0.58s</p>
+<p>测试用例数：5&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp成功用例数：3&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp失败用例数：2</p>
+<table cellpadding="1" cellspacing="0" border="1" class="table"><tr><td bgcolor="#ABABAB" align="center">用例ID</td>
+<td bgcolor="#ABABAB" align="center">接口描述</td>
+<td bgcolor="#ABABAB" align="center">请求URL</td>
+<td bgcolor="#ABABAB" align="center">方法</td>
+<td bgcolor="#ABABAB" align="center">请求数据</td>
+<td bgcolor="#ABABAB" align="center">返回值</td>
+<td bgcolor="#ABABAB" align="center">返回信息</td>
+<td bgcolor="#ABABAB" align="center">用例状态</td>
+
+</tr>
+<tr><td align="center">1</td>
+<td>根据用户ID获取购物车商品信息(Cart _3)</td>
+<td>http://b5caiapi.stage.com/cart/showcart.json?account=15921826291</td>
+<td align="center">get</td>
+<td align="center">none</td>
+<td align="center">40056008</td>
+<td>40056008 != 2000</td>
+<td align="center" style="color:#FF2D2D">fail</td>
+
+</tr>
+<tr><td align="center">2</td>
+<td>运费计算</td>
+<td>http://b5caiapi.stage.com/logistics/calculateLogisticsFee.json</td>
+<td align="center">post</td>
+<td align="center">{"adprAddr":"u4e0au6d77","transCheCd":"FISHER","tbMsOrdGudsOptDtos":[{"gudsId":80000664,"sllrId":"innisfree","ordGudsQty":1}]}</td>
+<td align="center">2000</td>
+<td></td>
+<td align="center" style="color:#64A600">pass</td>
+
+</tr>
+<tr><td align="center">3</td>
+<td>主页的new Brand(Home_3)</td>
+<td>http://b5caiapi.stage.com/index/newbrand.json</td>
+<td align="center">get</td>
+<td align="center">none</td>
+<td align="center">2000</td>
+<td></td>
+<td align="center" style="color:#64A600">pass</td>
+
+</tr>
+<tr><td align="center">4</td>
+<td>商品详情(Goods_1)</td>
+<td>http://b5caiapi.stage.com/goods/detail.json?sllrId=snp&gudsId=80000301</td>
+<td align="center">get</td>
+<td align="center">none</td>
+<td align="center">2000</td>
+<td></td>
+<td align="center" style="color:#64A600">pass</td>
+
+</tr>
+<tr><td align="center">5</td>
+<td>根据用户id获取所有收货地址(Addr_4)</td>
+<td>http://b5caiapi.stage.com/address/getall.json?custId=15921826291</td>
+<td align="center">get</td>
+<td align="center">none</td>
+<td align="center">2000</td>
+<td>'guohuai111' != u'guohuai'</td>
+<td align="center" style="color:#FF2D2D">fail</td>
+
+</tr>
+</table>
+<p><br/></p>
+<p><br/></p>
+<p><br/></p>
+<p><br/></p>
+<p><br/></p>
+</body>
+</html>

@@ -20,7 +20,6 @@ class HTMLReport(BaseMode.BaseMode):
         self.total_case_num = 0  # 运行测试用例总数
         self.sql = MySQL()
 
-
     @staticmethod
     # 获取报告名字
     def get_report_name():
